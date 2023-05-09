@@ -1,0 +1,47 @@
+import matplotlib.pyplot as plt
+
+# Dados sem contrapeso
+angulos = [0, 55.56, 111.11, 166.67, 222.22, 277.78, 333.33, 355.56, 388.89, 416.67, 444.44, 500, 555.56, 611.11, 666.67, 720]
+f14_sem_contrapeso = [0, 567.6681276, 594.0113689, 154.1732831, -533.5785392, -1268.099377, -2291.74424, -516.5261773, 760.4891098, 671.494616, 462.504895, 218.5351889, -60.01526993, -219.8306886, -184.2472509, 0]
+f32_sem_contrapeso = [1088.699299, 2745.066726, 2590.996941, 2331.571881, 2004.646112, 2725.871766, 14219.15827, 21257.45981, 5843.159552, 3211.772244, 1912.030248, 1307.234488, 667.8579758, 508.0425572, 543.6259948, 1088.699299]
+
+# Dados com contrapeso
+f14_com_contrapeso = [0, 118.9089958, -28.29046674, -83.71493078, -131.1849221, -460.7372884, -1894.163833, -431.6570475, 366.0936958, 208.9009829, -323.2039033, -179.2888961, 209.7361618, 419.1116534, 235.443373, 0]
+f32_com_contrapeso = [-13425.01302, -10443.60929, -11013.25623, -12099.52371, -10276.99664, -9396.29504, 2861.271547, 7287.209971, -8440.706634, -10098.10037, -11974.29315, -11824.76207, -13466.56054, -12360.25858, -11872.46661, -13425.01302]
+
+# dados de torque sem contrapeso
+angulos =  [0, 55.56, 111.11, 166.67, 222.22, 277.78, 333.33, 355.56, 388.89, 416.67, 444.44, 500, 555.56, 611.11, 666.67, 720]
+torque_sem_contrapeso = [0, 77.95357102, 61.3246883, 13.0378041, -48.79118139, -152.4884868, -349.2680498, -81.41725022, 115.2261467, 91.74924795, 54.96448227, 19.81640883, -5.092269306, -22.95367709, -25.55323023, 0]
+
+# dados de torque com contrapeso
+torque_com_contrapeso = [-496.7254816, -386.4135439, -407.4904804, -447.6823773, -380.2488757, -347.6629165, 105.8670472, 269.6267689, -312.3061454, -373.6297137, -443.0488464, -437.5161965, -498.2627399, -457.3295675, -439.2812645, -496.7254816]
+
+# Plotando o gráfico de F14 com contrapeso e sem contrapeso
+fig, ax = plt.subplots()
+ax.plot(angulos, f14_sem_contrapeso, label="Sem contrapeso")
+ax.plot(angulos, f14_com_contrapeso, label="Com contrapeso")
+ax.set_title("Gráfico da força F14")
+ax.set_xlabel("Ângulo [º]")
+ax.set_ylabel("Força [N]")
+ax.legend()
+plt.show()
+
+# Plotando o gráfico de F32 com contrapeso e sem contrapeso
+fig, ax = plt.subplots()
+ax.plot(angulos, f32_sem_contrapeso, label="Sem contrapeso")
+ax.plot(angulos, f32_com_contrapeso, label="Com contrapeso")
+ax.set_title("Gráfico da força F32")
+ax.set_xlabel("Ângulo [º]")
+ax.set_ylabel("Força [N]")
+ax.legend()
+plt.show()
+
+# Plotando o gráfico de t21 com contrapeso e sem contrapeso
+fig, ax = plt.subplots()
+ax.plot(angulos, torque_sem_contrapeso, label="Sem contrapeso")
+ax.plot(angulos, torque_com_contrapeso, label="Com contrapeso")
+ax.set_title("Gráfico da força t21")
+ax.set_xlabel("Ângulo [º]")
+ax.set_ylabel("Força [N]")
+ax.legend()
+plt.show()
